@@ -61,14 +61,6 @@
         grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
         gap: 20px;
     }
-    .about-photo {
-        display: block;
-        margin: 20px auto;
-        max-width: 100px;
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
     .card {
         background: #f4f4f4;
         padding: 20px;
@@ -86,6 +78,40 @@
         font-size: 0.9rem;
         font-weight: bold;
 }
+
+    /* layout for text + photo side-by-side */
+    .about {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-text {
+      flex: 1 1 0;
+    }
+
+    .about-photo {
+      width: 150px;
+      max-width: 30%;
+      height: auto;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 700px) {
+      .about {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-photo {
+        width: 120px;
+        max-width: 100%;
+        margin-top: 10px;
+      }
+    }
+
         footer {
         text-align: center;
         background: #2b6777;
@@ -108,20 +134,26 @@
 </header>
 <section>
     <h2>Over Buurman Bas</h2>
-    <p>
-        Niet iedereen heeft een handige buur, familielid of vriend die even kan helpen. Ik bied praktische hulp voor 
-        mensen die het zelf niet kunnen of wat extra hulp kunnen gebruiken.
-    </p>
-    <br>
-    <p>
-        Ik vind het leuk om iets voor een ander te betekenen en werk graag met mijn handen. Geen professioneel klusbedrijf, maar 
-        gewoon iemand die graag helpt en ervaring heeft met uiteenlopende klusjes.
-    </p>
-    <p>
-        Mensen om mij heen omschrijven mij als handig, zorgvuldig en precies. Ik neem de tijd en ben pas tevreden als 
-        u dat ook bent.
-    </p>
-    <img src="Foto volgt.jpg" alt="Buurman Bas" class="about-photo">
+    <div class="about">
+      <div class="about-text">
+        <p>
+            Niet iedereen heeft een handige buur, familielid of vriend die even kan helpen. Ik bied praktische hulp voor 
+            mensen die het zelf niet kunnen of wat extra hulp kunnen gebruiken.
+        </p>
+
+        <p>
+            Ik vind het leuk om iets voor een ander te betekenen en werk graag met mijn handen. Geen professioneel klusbedrijf, maar 
+            gewoon iemand die graag helpt en ervaring heeft met uiteenlopende klusjes.
+        </p>
+
+        <p>
+            Mensen om mij heen omschrijven mij als handig, zorgvuldig en precies. Ik neem de tijd en ben pas tevreden als 
+            u dat ook bent.
+        </p>
+      </div>
+
+      <img src="Foto volgt.jpg" alt="Buurman Bas" class="about-photo">
+    </div>
   </section>
 <section>
     <h2>Waar ik mee kan helpen</h2>
@@ -172,10 +204,10 @@
     <p>
         Stuur gerust een korte beschrijving (evt. met foto) via WhatsApp. Dan kijken we samen wat mogelijk is.
     </p>
+    <p style="text-align:center;">
       <a class="contact-button" href="https://wa.me/31651868368" target="_blank" rel="noopener noreferrer">WhatsApp mij</a>
-    <br>
-        Liever bellen? Dat kan ook. U kunt mij bereiken op 06-51868368.
     </p>
+    <p style="text-align:center;">Liever bellen? Dat kan ook. U kunt mij bereiken op 06-51868368.</p>
 </section>
 <footer>
     © 2026 Buurman Bas | Handige hulp dichtbij.
